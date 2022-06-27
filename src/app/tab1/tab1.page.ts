@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  public entryNo:any =105712;
   constructor() {}
 
 }
