@@ -1,0 +1,7 @@
+{
+  "name": "luckyDraw",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
