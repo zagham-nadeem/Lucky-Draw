@@ -1,12 +1,40 @@
+<ion-toolbar>
+  Welcome
+</ion-toolbar>
 <ion-content>
   <center>
-    <ion-card class="top-card">
-      <ion-card-title>
-        You're
-      </ion-card-title>
-      <ion-card-content>
-        # {{this.entryNo}}
-      </ion-card-content>
-    </ion-card>
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+          <h1>Slide 1</h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>Slide 2</h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>Slide 3</h1>
+        </ion-slide>
+      </ion-slides>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" size-xs="12" size="12" size-sm="12" *ngFor="let b of bid; let i = index">
+          <ion-card>
+            <div class="img"></div>
+            <div class="card-content">
+              <div class="card-content-top">
+                <p class="price">
+                  {{b.price}}
+                </p>
+              </div>
+              <div class="card-content-bottom">
+                <p class="name">
+                  {{b.name}}
+                </p>
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </center>
 </ion-content>
