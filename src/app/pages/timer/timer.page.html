@@ -1,0 +1,48 @@
+<ion-toolbar>
+  <ion-icon (click)="backhome()" class = "icon" name = "arrow-back" ></ion-icon>
+  <p class="clr header-text">Participate</p>
+
+</ion-toolbar>
+<ion-content>
+  <center>
+    <div class="top-card">
+      <p class="top-para">You're</p>
+      <h1 class="top-head">
+        #{{this.entryNo}}
+      </h1>
+      <p class="top-para">
+        of #{{this.totalEntery}} on the waitlist
+      </p>
+      <p class="top-para top-para-2">
+        Hurry Up!
+      </p>
+    </div>
+    <ion-card class="middle">
+      <ion-card-title class="timer">{{this.timeLeft}}</ion-card-title>
+      <ion-card-title class="timer-name">hours &nbsp;&nbsp;&nbsp; min &nbsp;&nbsp;&nbsp; sec</ion-card-title>
+    </ion-card>
+    <ion-card class="bottom"></ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col (click)="participate()" size-md="6" size-xs="12" size="12" size-sm="12" >
+          <ion-card class="card">
+            <div class="img"></div>
+            <div class="card-content">
+              <div class="card-content-top">
+                <p class="price">
+                  {{this.bid.price}}
+                </p>
+              </div>
+              <div class="card-content-bottom">
+                <p class="name">
+                  {{this.bid.name}}
+                </p>
+                <ion-icon class="next-icon" name="arrow-forward-outline"></ion-icon>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </center>
+</ion-content>

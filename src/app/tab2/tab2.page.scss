@@ -1,78 +1,80 @@
 @font-face {
-  font-family: Hunger;
-  src: url(./../../assets/fonts/American.ttf);
-}
-@font-face {
   font-family: Molot;
   src: url(./../../assets/fonts/Molot.otf);
 }
-ion-content {
-  --background: white;
-}
-.top-card {
-  background-color: var(--ion-color-primary);
-  margin: 0 auto;
-  padding: 20px;
-  height: 350px ;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-.top-para {
-  color: white;
-  font-weight: bolder;
-  font-size: 20px;
-  font-family: sans-serif;
-}
-.top-head {
-  color: white;
-  font-family: Molot;
-  font-size: 50px;
-  font-weight: 100;
-}
-.top-round {
-  border: 1px solid red;
-}
-.middle {
-  height: 150px;
-  position: absolute;
-  top: 265px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  --background: var(--ion-color-secondary);
-  width: 90%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-}
-.bottom {
-  --background: white;
-  margin: 0 auto;
-  height: 100px;
-  box-shadow: none;
-  position: initial;
-  top: 320px;
-  width: 100%;
-}
-.timer {
-  color: white;
-  font-size: 70px;
-  font-family: sans-serif;
-  font-weight: 900;
-}
-.timer-name {
-  color: white;
-  font-size: 22px;
-  font-weight: 800;
-}
-@media only screen and (min-width: 320px)  {
-  .timer {
-    font-size: 55px;
+:host {
+  ion-tab-bar {
+    border: 0;
+    margin-top: -1px;
   }
 }
-.participate {
-  --background: var(--ion-color-tertiary);
-  height: 200px;
+@-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
+ion-content {
+  --background: var(--ion-color-primary)
+}
+ion-toolbar{
+  -webkit-animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both;
+  --background: transparent;
+  text-align: center;
+  padding-top: 20px;
+  ion-label{
+    color: var(--ion-color-light);
+    font-size: 2rem;
+    font-family: Molot;
+    letter-spacing: 5px;
+
+  }
+}
+
+ion-footer {
+  -webkit-animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both;
+  height: 88%;
+  ion-list {
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    ion-list-header {
+      margin-inline-start: var(--ion-margin, 10px);
+      ion-label {
+        font-weight: bold;
+        font-size: 1.5em;
+        color: var(--ion-color-primary);
+      }
+    }
+    .ListContent{
+      padding: 16px;
+      justify-content: center;
+      text-align: center;
+      img{
+        height: 190px;
+      }
+      ion-button{
+        animation: cardAnimation 2s ease 0s 1 normal forwards;
+        height: 50px;
+        --background: var(--ion-color-primary);
+        color: var(--ion-color-light);
+        margin-top: 10px;
+        font-size: 13px;
+        text-transform: none;
+        --border-radius: 10px;
+        ion-icon{
+          color: var(--ion-color-light);
+          padding-right: 7px;
+          font-size: 25px;
+        }
+
+      }
+    }
+  }
+
+}
+@keyframes cardAnimation {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

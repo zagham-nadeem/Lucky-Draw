@@ -1,0 +1,185 @@
+@font-face {
+  font-family: Hunger;
+  src: url(./../../../assets/fonts/American.ttf);
+}
+@font-face {
+  font-family: Molot;
+  src: url(./../../../assets/fonts/Molot.otf);
+}
+ion-content {
+  --background: white;
+}
+*{
+  margin: 0;
+  box-shadow: none;
+  color: white;
+}
+.top-card {
+  background-color: var(--ion-color-primary);
+  margin: 0 auto;
+  padding: 20px;
+  height: 350px ;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.top-para {
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: sans-serif;
+  margin: 20px;
+}
+.top-head {
+  color: white;
+  font-family: Molot;
+  font-size: 50px;
+  font-weight: 100;
+}
+.top-round {
+  border: 1px solid red;
+}
+.middle {
+  height: 150px;
+  position: absolute;
+  top: 265px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  --background: var(--ion-color-secondary);
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+}
+.bottom {
+  --background: white;
+  margin: 0 auto;
+  height: 100px;
+  box-shadow: none;
+  position: initial;
+  top: 320px;
+  width: 100%;
+}
+.timer {
+  color: white;
+  font-size: 70px;
+  font-family: sans-serif;
+  font-weight: 900;
+}
+.timer-name {
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+}
+@media only screen and (min-width: 320px)  {
+  .timer {
+    font-size: 55px;
+  }
+}
+.participate {
+  --background: var(--ion-color-tertiary);
+  height: 200px;
+}
+ion-toolbar{
+  --background: var(--ion-color-primary);
+  position: relative;
+  text-align: center;
+  height: 50px;
+}
+.header-text{
+  display: inline-block;
+  font-weight: bold;
+}
+
+.clr{
+  color: white;
+  letter-spacing: 2px;
+  margin-left: 10px;
+  font-size: 24px;
+  font-family: Hunger;
+}
+
+.clr1{
+  font-size: 18px;
+}
+
+.icon{
+  font-size: 30px;
+  left: 13px;
+  top: 12px;
+  color: white;
+  float: left;
+  font-weight: 900;
+  position: absolute;
+}
+.img {
+  border: 1px solid white;
+  height: 136px;
+  margin: 6px;
+  width: 150px;
+  float: left;
+  border-radius: 20px;
+  background: white;
+}
+.card-content {
+  height: 150px;
+  border-bottom-right-radius: 18px;
+  border-top-right-radius: 18px;
+
+}
+.card-content-top {
+  height: 70px;
+  padding: 30px;
+  padding-top: 40px;
+}
+.card-content-bottom {
+  height: 70px;
+}
+.name {
+  font-size: 20px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 900;
+}
+.price {
+  font-size: 15px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 900;
+}
+.enter, {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+.next-icon {
+  font-size: 30px;
+  color: white;
+  float: right;
+  margin: 10px;
+}
+
+
+.card{
+  height: 150px;
+  border: 1px solid var(--ion-color-primary);
+  --background: var(--ion-color-primary);
+  transition: all 0.4s;
+  color: white;
+  border-radius: 20px;
+}
+
+.title{
+  text-align: center;
+  font-size: 18px;
+  padding: 65px 5px 20px 5px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+}
+.subtitle {
+  color: white;
+  font-size: 20px;
+}

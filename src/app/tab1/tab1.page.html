@@ -16,7 +16,7 @@
       </ion-slides>
     <ion-grid>
       <ion-row>
-        <ion-col size-md="6" size-xs="12" size="12" size-sm="12" *ngFor="let b of bid; let i = index">
+        <ion-col (click)="participate(b)" size-md="6" size-xs="12" size="12" size-sm="12" *ngFor="let b of bid; let i = index">
           <ion-card>
             <div class="img"></div>
             <div class="card-content">
