@@ -1,17 +1,59 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar>
+  Profile
+</ion-toolbar>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+    <ion-list class="Contenttoolbar">
+        <ion-buttons slot="end">
+                <ion-button (click)="enable()"><ion-icon [name]="changeIcon ? 'create-outline' : 'backspace-outline'"></ion-icon></ion-button>
+        </ion-buttons>
+    </ion-list>
+  <div class="main_content_div">
+        <div class="centerItem">
+            <div class="hafltBox">
+         <ion-avatar class="avataar">
+           <img id="cameraImage">
+         </ion-avatar>
+         <ion-button shape="round" class="Camerabtn"  *ngIf="sowButton" (click)="capturImage()">
+           <ion-icon name="camera"></ion-icon>
+         </ion-button>
+       </div>
+     </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+        <div class="detail_div">
+            <div class="light_box">
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <ion-input type="text" placeholder="First Name" [(ngModel)]="this.userData.first_name" disabled="{{enableInput}}"></ion-input>
+        </div>
+
+        <div class="detail_div">
+            <div class="light_box">
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <ion-input type="text" placeholder="Last Name" [(ngModel)]="this.userData.last_name" disabled="{{enableInput}}"></ion-input>
+        </div>
+        <div class="detail_div">
+            <div class="light_box">
+                <ion-icon name="call"></ion-icon>
+            </div>
+            <ion-input type="text" placeholder="Phone No" [(ngModel)]="this.userData.phoneno" disabled="{{enableInput}}"></ion-input>
+        </div>
+
+        <div class="detail_div">
+            <div class="light_box">
+                <ion-icon name="id-card"></ion-icon>
+            </div>
+            <ion-input type="text" placeholder="CNIC" [(ngModel)]="this.userData.cnic" disabled="{{enableInput}}"></ion-input>
+        </div>
+        <div class="detail_div">
+            <div class="light_box">
+                <ion-icon name="location"></ion-icon>
+            </div>
+            <ion-input type="text" placeholder="Address" [(ngModel)]="this.userData.address" disabled="{{enableInput}}"></ion-input>
+        </div>
+        <div *ngIf="sowButton">
+        <ion-button expand="block" mode="ios" class="btn" (click)="updatePeofile()">Update Profile</ion-button>
+        </div>
+  </div>
 </ion-content>

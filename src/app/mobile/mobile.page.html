@@ -8,7 +8,7 @@
 
   <ion-list lines="none">
     <ion-list-header class="ion-margin">
-      <ion-label>Code Verification</ion-label>
+      <ion-label>Enter Your Number</ion-label>
     </ion-list-header>
     <div class="centeer">
       <ion-grid class="phoneAuthGrid">
@@ -19,14 +19,14 @@
             </ion-input>
           </ion-col>
           <ion-col size="8">
-            <ion-input clearInput type="test" placeholder="Your Contact Number" [(ngModel)]="PhoneNo"
+            <ion-input clearInput type="test" placeholder="Enter Number" [(ngModel)]="PhoneNo"
               class="input ion-padding-horizontal" clear-input="true"></ion-input>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <ion-button expand="block" mode="ios" (click)="goToOtp($event)" class="btn-transition">
-              Enter Mobile Number
+              Submit
             </ion-button>
           </ion-col>
         </ion-row>
