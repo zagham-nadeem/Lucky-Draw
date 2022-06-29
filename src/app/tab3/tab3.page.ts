@@ -22,6 +22,7 @@ export class Tab3Page {
   async capturImage(){
     const img = await Camera.getPhoto({
       quality:90,
+      allowEditing: true,
       resultType: CameraResultType.Base64,
       source: CameraSource.Prompt,
     });

@@ -21,7 +21,11 @@ const routes: Routes = [
   {
     path: 'timer',
     loadChildren: () => import('./pages/timer/timer.module').then( m => m.TimerPageModule)
+  },  {
+    path: 'payment',
+    loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
   }
+
 
 ];
 @NgModule({
