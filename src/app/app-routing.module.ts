@@ -5,7 +5,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'mobile',
     loadChildren: () => import('./mobile/mobile.module').then( m => m.MobilePageModule)
+  },
+  {
+    path: 'timer',
+    loadChildren: () => import('./pages/timer/timer.module').then( m => m.TimerPageModule)
   }
 
 ];

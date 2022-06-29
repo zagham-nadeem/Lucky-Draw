@@ -1,23 +1,47 @@
-<ion-content>
-  <center>
-    <div class="top-card">
-      <p class="top-para">You're</p>
-      <h1 class="top-head">
-        #{{this.entryNo}}
-      </h1>
-      <p class="top-para">
-        of #{{this.totalEntery}} on the waitlist
-      </p>
-      <p class="top-para top-para-2">
-        Hurry Up!
-      </p>
-    </div>
-    <ion-card class="middle">
-      <ion-card-title class="timer">{{this.timeLeft}}</ion-card-title>
-      <ion-card-title class="timer-name">hours &nbsp;&nbsp;&nbsp; min &nbsp;&nbsp;&nbsp; sec</ion-card-title>
-    </ion-card>
-    <ion-card class="bottom"></ion-card>
-    <ion-card class="participate"></ion-card>
-
-  </center>
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-label class="ion-margin">
+      Winners
+    </ion-label>
+  </ion-toolbar>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+
+  <ion-list lines="none">
+    <div class="ListContent">
+      <div>
+        <img src="../../assets/images/winner.png" alt="">
+      </div>
+      <div class="main_content_div">
+
+        <div class="camera_div" >
+          <img src="" alt="">
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col (click)="participate(b)" size-md="6" size-xs="12" size="12" size-sm="12" *ngFor="let b of bid; let i = index">
+              <ion-card>
+                <div class="img"></div>
+                <div class="card-content">
+                  <div class="card-content-top">
+                    <p class="price">
+                     Won Rs. {{b.price}}
+                    </p>
+                  </div>
+                  <div class="card-content-bottom">
+                    <p class="name">
+                      {{b.name}}
+                    </p>
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </div>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </ion-list>
+
+</ion-footer>
