@@ -49,6 +49,10 @@
   
 //   }
 // }
+@font-face {
+  font-family: Hunger;
+  src: url(./../../assets/fonts/American.ttf);
+}
 @-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
 ion-content {
   --background: url('../../assets/images/bgImage2.png') no-repeat center center/cover;
@@ -60,9 +64,10 @@ ion-toolbar{
   padding-top: 12px;
   ion-label{
     color: var(--ion-color-light);
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: bolder;
-    letter-spacing: 5px;
+    font-family: Hunger;
+    letter-spacing: 6px;
 
   }
 }
@@ -96,7 +101,7 @@ ion-footer {
         --background: var(--ion-color-primary);
         color: var(--ion-color-light);
         margin-top: 10px;
-        font-size: 13px;
+        font-size: 15px;
         text-transform: none;
         --border-radius: 10px;
         ion-icon{
