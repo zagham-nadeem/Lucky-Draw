@@ -19,6 +19,10 @@ ion-slide {
   border: 2px solid var(--ion-color-primary);
   border-radius: 20px;
 }
+.slide-img {
+  height: 230px;
+  border-radius: 20px;
+}
 *{
   margin: 0;
   box-shadow: none;
@@ -85,6 +89,11 @@ ion-icon{
   float: left;
   border-radius: 15px;
   background: white;
+}
+.draw-img {
+  height: 136px;
+  width: 150px;
+  border-radius: 15px;
 }
 .card-content {
   height: 150px;

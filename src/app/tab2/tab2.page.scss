@@ -1,6 +1,6 @@
 @font-face {
   font-family: Molot;
-  src: url(./../../assets/fonts/Molot.otf);
+  src: url(./../../assets/fonts/American.ttf);
 }
 @-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
 
@@ -10,7 +10,7 @@ ion-toolbar{
   text-align: center;
   ion-label{
     color: var(--ion-color-light);
-    font-size: 2rem;
+    font-size: 40px;
     font-family: Molot;
 
   }

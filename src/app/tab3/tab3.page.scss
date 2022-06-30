@@ -77,6 +77,9 @@
 
         ion-input {
             max-width: 70%;
+          ion-input::placeholder {
+            color: #0d0d0d;
+          }
         }
 
         .simp_lbl {
@@ -100,7 +103,7 @@
         }
     }
 
-   
+
 
     .bold_lbl {
         font-size: 18px;

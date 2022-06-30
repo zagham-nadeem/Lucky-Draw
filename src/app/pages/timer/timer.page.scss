@@ -160,8 +160,11 @@ ion-toolbar{
   float: right;
   margin: 10px;
 }
-
-
+.draw-img {
+  height: 136px;
+  width: 150px;
+  border-radius: 15px;
+}
 .card{
   height: 150px;
   border: 1px solid var(--ion-color-primary);

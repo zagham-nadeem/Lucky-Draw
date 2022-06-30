@@ -35,9 +35,9 @@ startTimer() {
 }
 
   backhome() {
-    this.router.navigate(['/tabs/tab1'])
+    this.router.navigate(['/tabs/tab1']);
   }
   participate() {
-
+    this.router.navigate(['/information']);
   }
 }

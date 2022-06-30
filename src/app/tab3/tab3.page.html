@@ -24,33 +24,26 @@
             <div class="light_box">
                 <ion-icon name="person"></ion-icon>
             </div>
-            <ion-input type="text" placeholder="First Name" [(ngModel)]="this.userData.first_name" disabled="{{enableInput}}"></ion-input>
-        </div>
-
-        <div class="detail_div">
-            <div class="light_box">
-                <ion-icon name="person"></ion-icon>
-            </div>
-            <ion-input type="text" placeholder="Last Name" [(ngModel)]="this.userData.last_name" disabled="{{enableInput}}"></ion-input>
+            <ion-input type="text" placeholder="Full Name" [(ngModel)]="this.profileUpdate.full_name" disabled="{{enableInput}}"></ion-input>
         </div>
         <div class="detail_div">
             <div class="light_box">
                 <ion-icon name="call"></ion-icon>
             </div>
-            <ion-input type="text" placeholder="Phone No" [(ngModel)]="this.userData.phoneno" disabled="{{enableInput}}"></ion-input>
+            <ion-input type="text" placeholder="Phone No" [(ngModel)]="this.profileUpdate.phone" disabled="{{enableInput}}"></ion-input>
         </div>
 
         <div class="detail_div">
             <div class="light_box">
                 <ion-icon name="id-card"></ion-icon>
             </div>
-            <ion-input type="text" placeholder="CNIC" [(ngModel)]="this.userData.cnic" disabled="{{enableInput}}"></ion-input>
+            <ion-input type="text" placeholder="CNIC" [(ngModel)]="this.profileUpdate.cnic" disabled="{{enableInput}}"></ion-input>
         </div>
         <div class="detail_div">
             <div class="light_box">
                 <ion-icon name="location"></ion-icon>
             </div>
-            <ion-input type="text" placeholder="Address" [(ngModel)]="this.userData.address" disabled="{{enableInput}}"></ion-input>
+            <ion-input type="text" placeholder="Address" [(ngModel)]="this.profileUpdate.address" disabled="{{enableInput}}"></ion-input>
         </div>
         <div *ngIf="sowButton">
         <ion-button expand="block" mode="ios" class="btn" (click)="updatePeofile()">Update Profile</ion-button>

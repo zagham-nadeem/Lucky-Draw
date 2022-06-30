@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { timer } from 'rxjs';
 import {Router} from "@angular/router";
+import {FcmService} from "../services/fcm.service";
+import {ApicallService} from "../services/apicall.service";
+import {GlobalService} from "../services/global.service";
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -10,10 +13,11 @@ export class Tab1Page implements OnInit{
   public totalEntery:any;
   public entry:any = 105712;
   public entryNo:any;
-  public bid:any = [{name:'Jackpot', price:300},{name:'Winner', price:500},{name:'All Rounder', price:1000}]
-  constructor( public router: Router) {}
+  public bid:any;
+  constructor( public router: Router, public fcm : FcmService, public apiCall: ApicallService, public global : GlobalService) {}
 
   ngOnInit() {
+    this.getDraw();
     this.entryNo = this.entry.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     const totalEntry = 458308;
     this.totalEntery = totalEntry.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -25,6 +29,12 @@ export class Tab1Page implements OnInit{
   };
   participate(b) {
     this.router.navigate(['/timer'], {state:{Data:b}})
+  }
+  async getDraw() {
+    await this.apiCall.api_getDraw();
+    await this.global.Draw.subscribe(res => {
+      this.bid = res;
+    })
   }
 
 }
