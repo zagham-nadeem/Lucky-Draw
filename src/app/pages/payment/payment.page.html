@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+  <div class="labelDiv">
+    <ion-buttons>
+  <ion-button fill="clear" slot="start" class = "icon" (click)="backhome()">
+    <ion-icon name="arrow-back" slot="icon-only" color="white"></ion-icon>
+  </ion-button>
+</ion-buttons>
+  <p class="clr header-text">Payment</p>
+</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+
+  <ion-list lines="none">
+  <div class="LabelDiv">
+    <ion-label>Your Payment Information</ion-label>
+  </div>
+    <div class="centeer">
+        <ion-label class="inputLabel">Phone Number</ion-label>
+      <ion-input clearInput type="number" placeholder="Phone Number" class="input ion-padding-horizontal" clear-input="true">
+      </ion-input>
+        <ion-label class="inputLabel">Last 6 Digits Of CNIC</ion-label>
+      <ion-input clearInput type="test" placeholder="Last 6 Digits Of CNIC" class="input ion-padding-horizontal" clear-input="true">
+      </ion-input>
+      <ion-button expand="block" mode="ios" (click)="goToOtp($event)" class="btn-transition">
+              Submit
+      </ion-button>
+      
+  </div>
+  </ion-list>
+
+</ion-footer>

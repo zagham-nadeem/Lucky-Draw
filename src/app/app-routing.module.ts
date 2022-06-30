@@ -21,10 +21,6 @@ const routes: Routes = [
   {
     path: 'timer',
     loadChildren: () => import('./pages/timer/timer.module').then( m => m.TimerPageModule)
-  },
-  {
-    path: 'information',
-    loadChildren: () => import('./pages/information/information.module').then( m => m.InformationPageModule)
   }
 
 ];
