@@ -33,7 +33,9 @@ export class Tab1Page implements OnInit{
   async getDraw() {
     await this.apiCall.api_getDraw();
     await this.global.Draw.subscribe(res => {
-      this.bid = res;
+      if (res.length != 0) {
+        this.bid = res.filter(res => res.status == 'start');
+      }
     })
   }
 
