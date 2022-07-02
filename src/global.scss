@@ -24,3 +24,25 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* Alert Custom Class */
+.alert {
+  --background: transparent;
+  --backdrop-opacity: 0;
+  .alert-wrapper {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  img {
+    width: 400px;
+    height: 600px;
+  }
+}
+ion-loading.custom-loading {
+  --background: #e3edff;
+  --spinner-color: var(--ion-color-primary);
+
+  color: #ff6c59;
+}

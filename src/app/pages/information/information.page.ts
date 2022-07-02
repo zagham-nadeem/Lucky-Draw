@@ -11,10 +11,11 @@ import {GlobalService} from "../../services/global.service";
 })
 export class InformationPage implements OnInit {
 
-  public sowButton: boolean = false;
-  public enableInput : boolean = true;
+  public sowButton: boolean;
+  public enableInput : boolean ;
   public changeIcon: boolean = true;
   public login:any;
+  public update:boolean = true;
   public userData:any={pr_id:'', id:'', img:'', first_name:'', last_name:'', phoneno:'', cnic:'', address:''};
   public profileUpdate:any = { user_id:'', full_name:'', address:'', cnic:'', phone:'', image:'', token:'' }
   constructor( public router : Router, public apiCall : ApicallService, public global : GlobalService) {
@@ -24,8 +25,9 @@ export class InformationPage implements OnInit {
     this.profileUpdate.user_id = this.login.id;
     console.log(this.login);
     if (this.login.no == 1) {
-      this.sowButton = true;
+      this.update = false;
       this.enableInput = true;
+      this.enable();
     }
 
   }

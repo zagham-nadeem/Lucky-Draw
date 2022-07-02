@@ -10,6 +10,7 @@ export class ApicallService {
 
   public login:any;
   public draw:any;
+  participation: any;
   constructor(private authservice: AuthService, private global: GlobalService,  private router:Router) { }
 
   //Login
@@ -48,6 +49,15 @@ export class ApicallService {
       this.draw = JSON.parse(String(result));
       console.log(this.draw);
       this.global.api_Draw(this.draw);
+    }, (err) => {
+      console.log(err);
+    });
+  }
+  //Participate in Bid
+  async api_Participate(data: any) {
+    await this.authservice.con(data , 'add_participation').then((result) => {
+      this.participation = JSON.parse(String(result));
+      console.log(this.participation);
     }, (err) => {
       console.log(err);
     });

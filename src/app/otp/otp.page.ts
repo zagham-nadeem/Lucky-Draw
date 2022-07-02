@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoadingController, ModalController, NavController, ToastController } from '@ionic/angular';
+import {FireAuthService} from "../services/fire-auth.service";
+import {ApicallService} from "../services/apicall.service";
+import {GlobalService} from "../services/global.service";
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-otp',
   templateUrl: './otp.page.html',
@@ -7,18 +11,25 @@ import { LoadingController, ModalController, NavController, ToastController } fr
 })
 export class OtpPage implements OnInit {
 
+  public login:any = {user_id:'', token:''};
   @ViewChild('otp1') input;
-  otpString: string[] = ['', '', '', ''];
+  otpString: string[] = ['', '', '', '', '', ''];
   isLoading = false;
+  public phoneNo : any;
 
   constructor(
     public modalCtrl: ModalController,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
-    public NavCtrl: NavController
+    public NavCtrl: NavController,
+    public authService : FireAuthService,
+    public apiCall : ApicallService,
+    public global : GlobalService,
+    public router : Router
   ) { }
 
   ngOnInit() {
+    console.log(this.otpString)
   }
 
   ionViewDidEnter() {
@@ -28,7 +39,7 @@ export class OtpPage implements OnInit {
       console.log('enter');
     }, 500);
    }
- 
+
    otp(event, prev, next, index) {
      console.log(event);
      const pattern = /[0-9]/;
@@ -42,6 +53,7 @@ export class OtpPage implements OnInit {
      let value = event.target.value;
      if(value.length > 1) {
        this.otpString[index] = value;
+       console.log(this.otpString);
      }
      if(value.length < 1 && prev) {
        prev.setFocus();
@@ -53,12 +65,14 @@ export class OtpPage implements OnInit {
        } else return 0;
      }
    }
- 
+
    showLoader(msg) {
      if(!this.isLoading) this.isLoading = true;
      return this.loadingCtrl.create({
        message: msg,
-       spinner: 'bubbles'
+       mode: "ios",
+       duration: 3000,
+       spinner: 'dots'
      }).then(res => {
        res.present().then(() => {
          if(!this.isLoading) {
@@ -73,39 +87,58 @@ export class OtpPage implements OnInit {
        console.log(e);
      })
    }
- 
+
    hideLoader() {
      if(this.isLoading) this.isLoading = false;
      return this.loadingCtrl.dismiss()
      .then(() => console.log('dismissed'))
      .catch(e => console.log(e));
    }
- 
+
    joinOtpArray(otp) {
      if(!otp || otp == '') return 0;
      const otpNew = otp.join('');
      return otpNew;
    }
- 
+
    async verifyOtp() {
      this.showLoader('Verifying...');
      let otp = this.joinOtpArray(this.otpString);
-     // server access and verify otp
-     if(otp == '1234') {
-       this.otpString = ['', '', '', ''];
-       this.hideLoader();
-      //  this.modalCtrl.dismiss(otp);
-     } else {
-       const toast = await this.toastCtrl.create({
-         message: 'Wrong OTP',
-         duration: 5000,
-         color: "danger"
+     const y = parseInt(otp)
+     const res = {otp: y}
+     console.log(res)
+     this.authService.enterVerificationCode(res.otp).then(
+       async result => {
+         const toast = await this.toastCtrl.create({
+           message: 'Verified Successfully',
+           duration: 5000,
+           position: "top",
+           color: "secondary"
+         });
+         toast.present();
+         console.log(result);
+         this.global.Phone.subscribe(r => {
+           this.login.user_id = r;
+           this.global.api_UserID(r);
+           this.apiCall.api_login(this.login);
+           this.global.Login.subscribe(res => {
+             console.log(res);
+             if (res.message == 'profile created') {
+               const x = {id: r, no: 1}
+               this.router.navigate(['/information'], {state: {Login: x}});
+             }
+             if (res.message == 'User Already exits') {
+               this.router.navigate(['/tabs/tab1']);
+             }
+           })
+         })
+
        });
-       toast.present();
-       this.otpString = ['', '', '', ''];
+
+
+       this.otpString = ['', '', '', '', '', ''];
        this.hideLoader();
      }
-   }
    goToBack(){
     this.NavCtrl.back()
    }

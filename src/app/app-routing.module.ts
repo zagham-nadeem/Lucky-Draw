@@ -4,12 +4,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
-  {
-    path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+
   {
     path: 'otp',
     loadChildren: () => import('./otp/otp.module').then( m => m.OtpPageModule)
@@ -21,6 +22,22 @@ const routes: Routes = [
   {
     path: 'timer',
     loadChildren: () => import('./pages/timer/timer.module').then( m => m.TimerPageModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
+  },
+  {
+    path: 'information',
+    loadChildren: () => import('./pages/information/information.module').then( m => m.InformationPageModule)
+  },
+  {
+    path: 'testing',
+    loadChildren: () => import('./pages/testing/testing.module').then( m => m.TestingPageModule)
+  },
+  {
+    path: 'order',
+    loadChildren: () => import('./pages/order/order.module').then( m => m.OrderPageModule)
   }
 
 ];

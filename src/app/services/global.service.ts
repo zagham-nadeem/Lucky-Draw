@@ -44,4 +44,12 @@ export class GlobalService {
   {
     this.draw.next(basicInfo);
   }
+  //   Phone No.
+  private phone = new BehaviorSubject<any>('');
+  public Phone = this.phone.asObservable();
+  api_Phone(basicInfo: any)
+  {
+    this.phone.next(basicInfo);
+    console.log(basicInfo);
+  }
 }

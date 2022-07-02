@@ -18,8 +18,23 @@
       </p>
     </div>
     <ion-card class="middle">
-      <ion-card-title class="timer">{{this.timeLeft}}</ion-card-title>
-      <ion-card-title class="timer-name">hours &nbsp;&nbsp;&nbsp; min &nbsp;&nbsp;&nbsp; sec</ion-card-title>
+      <ion-row>
+        <ion-col size="12">
+          <ion-row>
+            <ion-col class="time-z" size="3">{{this._days}}</ion-col>
+            <ion-col class="time-z" size="3">{{this._hours}}</ion-col>
+            <ion-col class="time-z" size="3">{{this._minutes}}</ion-col>
+            <ion-col class="time-z" size="3">{{this._seconds}}</ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="12">
+          <ion-col class="time-t" size="3">Day</ion-col>
+          <ion-col class="time-t" size="3">Hour</ion-col>
+          <ion-col class="time-t" size="3">Min</ion-col>
+          <ion-col class="time-t" size="3">Sec</ion-col>
+        </ion-col>
+      </ion-row>
+
     </ion-card>
     <ion-card class="bottom"></ion-card>
     <ion-grid>

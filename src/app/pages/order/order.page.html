@@ -1,0 +1,55 @@
+<ion-toolbar>
+  Basic Info
+</ion-toolbar>
+
+<ion-content>
+  <ion-list class="Contenttoolbar">
+    <ion-buttons slot="end">
+      <ion-button (click)="enable()"><ion-icon [name]="changeIcon ? 'create-outline' : 'backspace-outline'"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-list>
+  <div class="main_content_div">
+    <div class="centerItem">
+      <div class="hafltBox">
+        <ion-avatar class="avataar">
+          <img id="cameraImage" src="{{this.Profile.image}}">
+        </ion-avatar>
+        <ion-button shape="round" class="Camerabtn"  *ngIf="sowButton" (click)="capturImage()">
+          <ion-icon name="camera"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+
+    <div class="detail_div">
+      <div class="light_box">
+        <ion-icon name="person"></ion-icon>
+      </div>
+      <ion-input  type="text" placeholder="Full Name" [(ngModel)]="this.profileUpdate.full_name" disabled="{{enableInput}}"></ion-input>
+    </div>
+    <div class="detail_div">
+      <div class="light_box">
+        <ion-icon name="call"></ion-icon>
+      </div>
+      <ion-input  type="number" placeholder="Phone No" [(ngModel)]="this.profileUpdate.phone" disabled="{{enableInput}}"></ion-input>
+    </div>
+
+    <div class="detail_div">
+      <div class="light_box">
+        <ion-icon name="id-card"></ion-icon>
+      </div>
+      <ion-input  type="number" placeholder="CNIC" [(ngModel)]="this.profileUpdate.cnic" disabled="{{enableInput}}"></ion-input>
+    </div>
+    <div class="detail_div">
+      <div class="light_box">
+        <ion-icon name="location"></ion-icon>
+      </div>
+      <ion-input  type="text" placeholder="Address" [(ngModel)]="this.profileUpdate.address" disabled="{{enableInput}}"></ion-input>
+    </div>
+    <div *ngIf="sowButton">
+      <ion-button [disabled]="this.profileUpdate.full_name == '' || this.profileUpdate.cnic == '' || this.profileUpdate.phone == '' || this.profileUpdate.address == ''" expand="block" mode="ios" class="btn" (click)="updatePeofile()">Update Profile</ion-button>
+    </div>
+    <div *ngIf="pay">
+      <ion-button  expand="block" mode="ios" class="btn" (click)="payment()">Continue</ion-button>
+    </div>
+  </div>
+</ion-content>

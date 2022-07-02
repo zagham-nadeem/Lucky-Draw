@@ -27,22 +27,23 @@ ion-footer {
                 font-size: 0.9em;
                 overflow: visible;
                 max-width: 550px;
-                ion-row {                
+                ion-row {
                     ion-col {
                         ion-input {
-                            font-size: 1.4em;
+                            font-size: 35px;
                             --background: var(--ion-color-Input-light);
                             display: inline-block;
-                            width: 7vh;
+                            text-align: center;
+                            width: 5vh;
                             height: 7vh;
                             border-radius: 5px;
                         }
                         .marginLeft {
-                            margin-left: 3vh;
+                            margin-left: 1vh;
                         }
                     }
                 }
-            
+
             }
         }
     }
@@ -52,7 +53,7 @@ ion-footer {
     justify-content: center;
     display: flex;
 }
- 
+
 @media only screen and (max-width: 290px)  {
     ion-footer {
         -webkit-animation:slide-in-bottom 1s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-bottom 1s cubic-bezier(.25,.46,.45,.94) both;
@@ -72,7 +73,7 @@ ion-footer {
                     font-size: 0.9em;
                     overflow: visible;
                     max-width: 550px;
-                    ion-row {                
+                    ion-row {
                         ion-col {
                             ion-input {
                                 font-size: 1.4em;
@@ -87,13 +88,13 @@ ion-footer {
                             }
                         }
                     }
-                
+
                 }
             }
         }
-    
+
     }
 
   }
-  
+
   @-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}

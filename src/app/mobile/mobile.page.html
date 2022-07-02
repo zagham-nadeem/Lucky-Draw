@@ -4,8 +4,8 @@
   </ion-button>
 </ion-content>
 
-<ion-footer class="ion-no-border">
-
+<ion-footer class="ion-no-border" >
+  <div id="sign-in-button"></div>
   <ion-list lines="none">
     <ion-list-header class="ion-margin">
       <ion-label>Enter Your Number</ion-label>
@@ -14,9 +14,11 @@
       <ion-grid class="phoneAuthGrid">
         <ion-row>
           <ion-col size="4">
-            <ion-input disabled="true" value="+92" class="phoneCountry" >
-              <img src="../../assets/images/pakistan flag.png" alt="">
-            </ion-input>
+            <ion-select class="phoneCountry" value="brown" okText="Okay" cancelText="Dismiss"
+                        (ionChange)="countryCodeChange($event)" [value]="CountryCode">
+              <ion-select-option *ngFor="let country of CountryJson" value={{country.dial_code}}>
+                {{country.dial_code + ' ' + country.name}}</ion-select-option>
+            </ion-select>
           </ion-col>
           <ion-col size="8">
             <ion-input clearInput type="test" placeholder="Enter Number" [(ngModel)]="PhoneNo"
@@ -25,8 +27,8 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-button expand="block" mode="ios" (click)="goToOtp($event)" class="btn-transition">
-              Submit
+            <ion-button [disabled]="this.PhoneNo == ''" expand="block" mode="ios" (click)="signinWithPhoneNumber($event)" class="btn-transition">
+              Verify
             </ion-button>
           </ion-col>
         </ion-row>
@@ -35,3 +37,4 @@
   </ion-list>
 
 </ion-footer>
+

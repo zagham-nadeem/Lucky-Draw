@@ -6,14 +6,6 @@
   font-family: Molot;
   src: url(./../../../assets/fonts/Molot.otf);
 }
-@font-face {
-  font-family: Codec;
-  src: url(./../../../assets/fonts/Codec.ttf);
-}
-@font-face {
-  font-family: Fira;
-  src: url(./../../../assets/fonts/Fira.ttf);
-}
 ion-content {
   --background: white;
 }
@@ -205,4 +197,23 @@ ion-toolbar{
   font-weight: bold;
   font-size: 30px;
   color: white;
+}
+
+.loader{
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect{
+  fill: #ff6c59;
 }

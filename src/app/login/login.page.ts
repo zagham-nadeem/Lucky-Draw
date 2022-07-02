@@ -50,8 +50,22 @@ export class LoginPage implements OnInit {
     console.log('Facebook Programme Run')
      const result = await FirebaseAuthentication.signInWithFacebook();
      console.log(result)
+     this.login.user_id = result.user.uid;
+     this.global.api_UserID(result.user.uid);
+     this.apiCall.api_login(this.login);
+     this.global.Login.subscribe(res => {
+       console.log(res);
+       if (res.message == 'profile created') {
+         const x = {id:result.user.uid, no:1}
+         this.router.navigate(['/information'], {state:{Login:x}});
+       }
+       if (res.message == 'User Already exits') {
+         this.router.navigate(['/tabs/tab1']);
+       }
+     })
+
      return result.user;
-   };
+   }
    goToMobile(){
     this.router.navigate(['/mobile'])
    }
