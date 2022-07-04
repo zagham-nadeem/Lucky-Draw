@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "972820666078",
+    "project_id": "draw-contest",
+    "storage_bucket": "draw-contest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972820666078:android:4141cc2404a99d729a544f",
+        "android_client_info": {
+          "package_name": "com.aliensoft.win"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972820666078-5msok0mrfj6ll9cjql3ecb4isb9jjhkp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2pGfwgxmqHdky2bB6HCiIg7QGY7qun8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972820666078-5msok0mrfj6ll9cjql3ecb4isb9jjhkp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

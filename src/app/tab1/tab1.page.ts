@@ -17,6 +17,8 @@ export class Tab1Page implements OnInit{
   constructor( public router: Router, public fcm : FcmService, public apiCall: ApicallService, public global : GlobalService) {}
 
   ngOnInit() {
+    this.fcm.Platform();
+    this.fcm.getToken();
     this.getDraw();
     this.entryNo = this.entry.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     const totalEntry = 458308;

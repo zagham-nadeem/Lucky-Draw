@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.Learn2Earn.luckyDraw',
-  appName: 'luckyDraw',
+  appId: 'com.aliensoft.win',
+  appName: 'WIN',
   webDir: 'www',
   bundledWebRuntime: false,
   plugins: {
@@ -10,7 +10,10 @@ const config: CapacitorConfig = {
       skipNativeAuth: false,
       providers: ["facebook.com", "google.com"],
     },
-  },
+    PushNotifications: {
+      presentationOptions: ["badge", "sound", "alert"],
+    },
+  }
 };
 
 export default config;

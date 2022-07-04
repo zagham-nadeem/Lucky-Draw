@@ -22,13 +22,13 @@ export class TimerPage implements OnInit {
   public bid:any;
   private _trialEndsAt;
 
-  private _diff: number = 0;
-  private _days: number = 0;
-  private _hours: number = 0;
+  private _diff: number ;
+  private _days: number ;
+  private _hours: number ;
 
-  private _minutes: number = 0;
+  private _minutes: number ;
 
-  private _seconds: number = 0;
+  private _seconds: number ;
   profile: { profile: any; bid: any; };
 
   constructor( public router : Router, public alertController: AlertController, public loadingCtrl : LoadingController, public apiCall : ApicallService, public global : GlobalService) {}

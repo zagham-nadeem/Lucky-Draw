@@ -11,6 +11,7 @@ export class ApicallService {
   public login:any;
   public draw:any;
   participation: any;
+  win: any;
   constructor(private authservice: AuthService, private global: GlobalService,  private router:Router) { }
 
   //Login
@@ -58,6 +59,16 @@ export class ApicallService {
     await this.authservice.con(data , 'add_participation').then((result) => {
       this.participation = JSON.parse(String(result));
       console.log(this.participation);
+    }, (err) => {
+      console.log(err);
+    });
+  }
+  // get Win
+  async api_getWin() {
+    await this.authservice.getdata('get_winner').then((result) => {
+      this.win = JSON.parse(String(result));
+      console.log(this.win);
+      this.global.api_Win(this.win);
     }, (err) => {
       console.log(err);
     });

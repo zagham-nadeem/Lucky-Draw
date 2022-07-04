@@ -52,4 +52,12 @@ export class GlobalService {
     this.phone.next(basicInfo);
     console.log(basicInfo);
   }
+  // Get Win
+  private win = new BehaviorSubject<any>('');
+  public Win = this.win.asObservable();
+  api_Win(basicInfo: any)
+  {
+    this.win.next(basicInfo);
+    console.log(basicInfo);
+  }
 }

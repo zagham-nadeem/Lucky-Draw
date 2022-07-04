@@ -16,9 +16,11 @@
         </div>
         <ion-grid>
           <ion-row>
-            <ion-col (click)="detail(b)" size-md="6" size-xs="12" size="12" size-sm="12" *ngFor="let b of bid; let i = index">
+            <ion-col (click)="detail(b)" size-md="6" size-xs="12" size="12" size-sm="12" *ngFor="let b of winnner; let i = index">
               <ion-card>
-                <div class="img"></div>
+                <div class="img">
+                  <img class="winner-img" src="{{b.image}}" >
+                </div>
                 <div class="card-content">
                   <div class="card-content-top">
                     <p class="price">
@@ -27,7 +29,7 @@
                   </div>
                   <div class="card-content-bottom">
                     <p class="name">
-                      {{b.name}}
+                      {{b.full_name}}
                     </p>
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                   </div>

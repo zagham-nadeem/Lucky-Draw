@@ -1,6 +1,6 @@
 {
-	"appId": "com.Learn2Earn.luckyDraw",
-	"appName": "luckyDraw",
+	"appId": "com.aliensoft.win",
+	"appName": "WIN",
 	"webDir": "www",
 	"bundledWebRuntime": false,
 	"plugins": {
@@ -9,6 +9,13 @@
 			"providers": [
 				"facebook.com",
 				"google.com"
+			]
+		},
+		"PushNotifications": {
+			"presentationOptions": [
+				"badge",
+				"sound",
+				"alert"
 			]
 		}
 	}

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">luckyDraw</string>
-    <string name="title_activity_main">luckyDraw</string>
-    <string name="package_name">com.Learn2Earn.luckyDraw</string>
-    <string name="custom_url_scheme">com.Learn2Earn.luckyDraw</string>
+    <string name="app_name">WIN</string>
+    <string name="title_activity_main">WIN</string>
+    <string name="package_name">com.aliensoft.win</string>
+    <string name="custom_url_scheme">com.aliensoft.win</string>
 </resources>

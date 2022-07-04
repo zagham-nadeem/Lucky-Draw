@@ -1,0 +1,50 @@
+<ion-app >
+  <ion-header>
+    <ion-item lines="none" class="item-1">
+      <p class="heading"><b>Winner Information</b></p>
+    </ion-item>
+      <ion-item lines="none" class="item-2">
+        <ion-icon class="close-icon" name="close-circle-outline" (click)="close()" ></ion-icon>
+      </ion-item>
+  </ion-header>
+
+
+  <ion-content>
+    <ion-list class="Contenttoolbar">
+    </ion-list>
+    <div class="main_content_div">
+      <div class="centerItem">
+        <div class="hafltBox">
+          <ion-avatar class="avataar">
+            <img id="cameraImage" src="{{this.Data.image}}">
+          </ion-avatar>
+        </div>
+      </div>
+
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon name="person"></ion-icon>
+        </div>
+        <ion-input value="{{this.Data.full_name}}" type="text" placeholder="Full Name"  disabled="{{enableInput}}"></ion-input>
+      </div>
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon name="call"></ion-icon>
+        </div>
+        <ion-input value="{{this.Data.phone}}" type="number" placeholder="Phone No"  disabled="{{enableInput}}"></ion-input>
+      </div>
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon name="trophy"></ion-icon>
+        </div>
+        <ion-input value="{{this.Data.draw_name}}" type="text" placeholder="Draw Won"  disabled="{{enableInput}}"></ion-input>
+      </div>
+      <div class="detail_div">
+        <div class="light_box">
+          <ion-icon name="cash"></ion-icon>
+        </div>
+        <ion-input value="{{this.Data.price}}" type="number" placeholder="Price Won"  disabled="{{enableInput}}"></ion-input>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

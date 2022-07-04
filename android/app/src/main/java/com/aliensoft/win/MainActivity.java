@@ -1,4 +1,4 @@
-package com.Learn2Earn.luckyDraw;
+package com.aliensoft.win;
 
 import com.getcapacitor.BridgeActivity;
 
